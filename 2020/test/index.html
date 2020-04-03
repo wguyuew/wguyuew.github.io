@@ -24,10 +24,10 @@
   <title>
        
        
-           Test | Gy&#39;s Blog
+           hugo&#43;github搭建 | Gy&#39;s Blog
        
   </title>
-  <meta name="title" content="Test | Gy&#39;s Blog">
+  <meta name="title" content="hugo&#43;github搭建 | Gy&#39;s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -46,8 +46,8 @@
          "@id": "https:\/\/wguyuew.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "Test",
-    "headline" : "Test",
+    "name" : "hugo\x2bgithub搭建",
+    "headline" : "hugo\x2bgithub搭建",
     "description" : "搭建准备工作  一个Git账号 \x26ndash;\x26gt; 利用Github Pages搭建博客 Git \x26ndash;\x26gt; 博客操作 Hugo \x26ndash;\x26gt; 博客框架  Git账号获取 自行百度或谷歌（狗头保命）\nGit   官网下载安装\n  打开cmd(win\x2bR)输入\n git version\n   git 部署个人账号和邮箱 右键打开Git Bush here\n   git init git config username \x26ldquo;你的gitbub用户名\x26rdquo; git config useremail \x26ldquo;邮箱\x26rdquo; git config username \/\/进行检查 git config useremail \/\/进行检查\n 若出现版本号则成功\nHugo 下载安装   官网下载安装\n  将安装包解压到你想保存的路径（记住其中的.exe文件路径）\n  将上述路径加入到环境变量中去\n  此电脑 选中属性",
     "inLanguage" : "zh-cn",
     "author" : "叽里咕噜",
@@ -72,9 +72,6 @@
   <body class="">
     <div class="wrapper">
         <nav class="navbar">
-    
-    <div class="top-scroll-bar"></div>
-    
     <div class="container">
         <div class="navbar-header header-logo">
         	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://wguyuew.github.io/">Gy&#39;s Blog</a>
@@ -96,9 +93,6 @@
     </div>
 </nav>
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
-    
-    <div class="top-scroll-bar"></div>
-    
      <div class="container">
         <div class="navbar-header">
             <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://wguyuew.github.io/">Gy&#39;s Blog</a></div>
@@ -126,9 +120,26 @@
     	 <main class="main">
           <div class="container">
       		
+<head>
+    <style type="text/css">
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        height: 40px;
+        background-color: #eee;
+        border-radius: 16px;
+        &:hover {
+            background-color: #ddd;
+ }
+}
+
+    </style>
+</head>
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Test</h1>
+        <h1 class="post-title" itemprop="name headline">hugo&#43;github搭建</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://wguyuew.github.io/" rel="author">叽里咕噜</a> with ♥ 
                 <span class="post-time">
@@ -142,6 +153,37 @@
                 <span class="post-word-count">, 247 words</span>
         </div>
     </header>
+    <div style="position: fixed; right:5px;max-width:300px; overflow:auto; top: 100px; width: 10vw; bottom:50px">
+        
+<div class="post-toc" id="post-toc">
+<aside>
+    <header>
+    <h3>hugo&#43;github搭建</h3>
+    </header>
+    
+    
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#git账号获取">Git账号获取</a></li>
+    <li><a href="#git">Git</a></li>
+    <li><a href="#hugo">Hugo</a>
+      <ul>
+        <li><a href="#下载安装">下载安装</a></li>
+        <li><a href="#创建网站">创建网站</a></li>
+        <li><a href="#写博客">写博客</a></li>
+        <li><a href="#启动">启动</a></li>
+      </ul>
+    </li>
+    <li><a href="#与github-pages联动">与GitHub Pages联动</a></li>
+  </ul>
+</nav>
+    
+    
+</aside>
+<a href="#" id="toc-toggle"></a>
+</div>
+
+    </div>
     <div class="post-content">
         
 
@@ -403,14 +445,29 @@ git push -u origin master</p>
          
         
     </div>
-
-    <h5 id="wc" style="font-size: 1rem;text-align: center;">300 Words|Read in about 2 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
     <div class="post-comment">
           
                  
           
           
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'QY5C5qOMGzNVu9R00WtjshWH-gzGzoHsz',
+        appKey: 'GdhkeXvVIlCyBVrGVYawowBR',
+        notify: 'false', 
+        verify: 'false', 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
     </div>
+    <h5 id="wc" style="font-size: 1rem;text-align: center;">300 Words|Read in about 2 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
 </article>
           </div>
 		   </main>
@@ -438,7 +495,6 @@ git push -u origin master</p>
      </span>
       </div>
 </footer>
-
 
 
 
