@@ -48,7 +48,7 @@
     "articleSection" : "posts",
     "name" : "数据库笔记",
     "headline" : "数据库笔记",
-    "description" : "MySql操作  数据库基础     数据库：保存有组织的数据的容器。\n    表：某种特定类型结构化清单。\n    模式:关于数据库和表的布局及特性的信息。\n    列:表中的一个字段，所有表都是从一个或多个列组成的。\n    行:表中的一个记录\n    主键(primary key):一列(一组列)其值能唯一区分表中的每个行\n  主键必须满足的条件: 任意两行都不具有相同的主键值； 每个行都必须具有一个主键值（主键列不允许NULL值）。  主键最好满足的条件: 不更新主键列中的值； 不重用主键列的值； 不在主键列中使用可能会更改的值;       检索数据  select语句   检查单个列(未排序)  slect Sname(检查的列)\rfrom Student(列所在的表);\r 检查多个列  \r 检查所有的列   检索不同的行   限制结果   使用完全限定的名称  ",
+    "description" : "MySql操作  数据库基础     数据库：保存有组织的数据的容器。\n    表：某种特定类型结构化清单。\n    模式:关于数据库和表的布局及特性的信息。\n    列:表中的一个字段，所有表都是从一个或多个列组成的。\n    行:表中的一个记录\n    主键(primary key):一列(一组列)其值能唯一区分表中的每个行\n  主键必须满足的条件: 任意两行都不具有相同的主键值； 每个行都必须具有一个主键值（主键列不允许NULL值）。  主键最好满足的条件: 不更新主键列中的值； 不重用主键列的值； 不在主键列中使用可能会更改的值;       检索数据   检查单个列(未排序)  slect Sno(检查的列)\rfrom Student(列所在的表);\r 检查多个列  select Sno,Sname,Ssex\rfrom Student;\r 检查所有的列  select *\rform Student;\r 检索不同的行 重复元素  select Sno\rfrom Sc;\r无重复元素",
     "inLanguage" : "zh-cn",
     "author" : "叽里咕噜",
     "creator" : "叽里咕噜",
@@ -59,7 +59,7 @@
     "datePublished": "2020-04-24 22:19:15 \x2b0800 CST",
     "dateModified" : "2020-04-24 22:19:15 \x2b0800 CST",
     "url" : "https:\/\/wguyuew.github.io\/2020\/sql_1\/",
-    "wordCount" : "28",
+    "wordCount" : "64",
     "keywords" : [ "mysql必知必会笔记", "Gy\x27s Blog"]
 }
 </script>
@@ -151,7 +151,7 @@
                         <a href="https://wguyuew.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
                         
                 </span>
-                <span class="post-word-count">, 28 words</span>
+                <span class="post-word-count">, 64 words</span>
         </div>
     </header>
     <div style="position: fixed; right:5px;max-width:300px; overflow:auto; top: 100px; width: 10vw; bottom:50px">
@@ -166,11 +166,8 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#数据库基础">数据库基础</a></li>
-    <li><a href="#检索数据">检索数据</a>
-      <ul>
-        <li><a href="#select语句">select语句</a></li>
-      </ul>
-    </li>
+    <li><a href="#检索数据">检索数据</a></li>
+    <li><a href="#排序检索数据">排序检索数据</a></li>
   </ul>
 </nav>
     
@@ -254,31 +251,57 @@
 <hr>
 <h2 id="检索数据">检索数据</h2>
 <hr>
-<h3 id="select语句">select语句</h3>
-<hr>
 <ul>
 <li>检查单个列(未排序)</li>
 </ul>
-<pre><code>slect  Sname(检查的列)
-from Student(列所在的表);
-</code></pre><p><img src="https://github.com/wguyuew/images/img/20200424221544.png" alt="实验 图片"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">slect  <span style="color:#a6e22e">Sno</span>(<span style="color:#960050;background-color:#1e0010">检查的列</span>)
+from Student(<span style="color:#960050;background-color:#1e0010">列所在的表</span>);
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425100923.png" alt=""></p>
 <ul>
 <li>检查多个列</li>
 </ul>
-<pre><code>
-</code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno,Sname,Ssex
+from Student;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425101517.png" alt=""></p>
+<ul>
 <li>检查所有的列</li>
 </ul>
-<pre><code></code></pre><ul>
-<li>检索不同的行</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select <span style="color:#f92672">*</span>
+form Student;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425101710.png" alt=""></p>
+<ul>
+<li>检索不同的行
+重复元素</li>
 </ul>
-<pre><code></code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select  Sno
+from Sc;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425132009.png" alt="">
+无重复元素</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select distinct Sno
+from Sc;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425132225.png" alt=""></p>
+<ul>
 <li>限制结果</li>
 </ul>
-<pre><code></code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno
+from Student
+limit <span style="color:#ae81ff">3</span>;<span style="color:#75715e">//限制的个数
+</span></code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425132352.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno
+from Student
+limit <span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425132816.png" alt=""></p>
+<ul>
 <li>使用完全限定的名称</li>
 </ul>
-<pre><code></code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Student.Sno
+from Student
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425132652.png" alt=""></p>
+<hr>
+<h2 id="排序检索数据">排序检索数据</h2>
+<hr>
+<p>未完待续</p>
+
     </div>
 
     <div class="post-copyright">
