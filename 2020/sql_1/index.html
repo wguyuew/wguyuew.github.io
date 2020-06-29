@@ -12,7 +12,7 @@
   
   
   <link rel="prev" href="https://wguyuew.github.io/2020/test/" />
-  
+  <link rel="next" href="https://wguyuew.github.io/2020/blog3/" />
   <link rel="canonical" href="https://wguyuew.github.io/2020/sql_1/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -48,7 +48,7 @@
     "articleSection" : "posts",
     "name" : "数据库笔记",
     "headline" : "数据库笔记",
-    "description" : "MySql操作  数据库基础     数据库：保存有组织的数据的容器。\n    表：某种特定类型结构化清单。\n    模式:关于数据库和表的布局及特性的信息。\n    列:表中的一个字段，所有表都是从一个或多个列组成的。\n    行:表中的一个记录\n    主键(primary key):一列(一组列)其值能唯一区分表中的每个行\n  主键必须满足的条件: 任意两行都不具有相同的主键值； 每个行都必须具有一个主键值（主键列不允许NULL值）。  主键最好满足的条件: 不更新主键列中的值； 不重用主键列的值； 不在主键列中使用可能会更改的值;       检索数据   检查单个列(未排序)  slect Sno(检查的列)\rfrom Student(列所在的表);\r 检查多个列  select Sno,Sname,Ssex\rfrom Student;\r 检查所有的列  select *\rform Student;\r 检索不同的行 重复元素  select Sno\rfrom Sc;\r无重复元素",
+    "description" : "MySql操作  数据库基础     数据库：保存有组织的数据的容器。\n    表：某种特定类型结构化清单。\n    模式:关于数据库和表的布局及特性的信息。\n    列:表中的一个字段，所有表都是从一个或多个列组成的。\n    行:表中的一个记录\n    主键(primary key):一列(一组列)其值能唯一区分表中的每个行\n  主键必须满足的条件: 任意两行都不具有相同的主键值； 每个行都必须具有一个主键值（主键列不允许NULL值）。  主键最好满足的条件: 不更新主键列中的值； 不重用主键列的值； 不在主键列中使用可能会更改的值;       检索数据   检查单个列(未排序)  select Sno(检查的列)\rfrom Student(列所在的表);\r 检查多个列  select Sno,Sname,Ssex\rfrom Student;\r 检查所有的列  select *\rform Student;\r 检索不同的行 重复元素  select Sno\rfrom Sc;\r无重复元素",
     "inLanguage" : "zh-cn",
     "author" : "叽里咕噜",
     "creator" : "叽里咕噜",
@@ -59,7 +59,7 @@
     "datePublished": "2020-04-24 22:19:15 \x2b0800 CST",
     "dateModified" : "2020-04-24 22:19:15 \x2b0800 CST",
     "url" : "https:\/\/wguyuew.github.io\/2020\/sql_1\/",
-    "wordCount" : "64",
+    "wordCount" : "194",
     "keywords" : [ "mysql必知必会笔记", "Gy\x27s Blog"]
 }
 </script>
@@ -151,7 +151,7 @@
                         <a href="https://wguyuew.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
                         
                 </span>
-                <span class="post-word-count">, 64 words</span>
+                <span class="post-word-count">, 194 words</span>
         </div>
     </header>
     <div style="position: fixed; right:5px;max-width:300px; overflow:auto; top: 100px; width: 10vw; bottom:50px">
@@ -168,6 +168,10 @@
     <li><a href="#数据库基础">数据库基础</a></li>
     <li><a href="#检索数据">检索数据</a></li>
     <li><a href="#排序检索数据">排序检索数据</a></li>
+    <li><a href="#过滤数据">过滤数据</a></li>
+    <li><a href="#数据过滤">数据过滤</a></li>
+    <li><a href="#使用子查询">使用子查询</a></li>
+    <li><a href="#联结表">联结表</a></li>
   </ul>
 </nav>
     
@@ -254,7 +258,7 @@
 <ul>
 <li>检查单个列(未排序)</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">slect  <span style="color:#a6e22e">Sno</span>(<span style="color:#960050;background-color:#1e0010">检查的列</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select  <span style="color:#a6e22e">Sno</span>(<span style="color:#960050;background-color:#1e0010">检查的列</span>)
 from Student(<span style="color:#960050;background-color:#1e0010">列所在的表</span>);
 </code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200425100923.png" alt=""></p>
 <ul>
@@ -300,7 +304,112 @@ from Student
 <hr>
 <h2 id="排序检索数据">排序检索数据</h2>
 <hr>
-<p>未完待续</p>
+<ul>
+<li>排序数据</li>
+</ul>
+<ul>
+<li>无order by</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno
+from Student;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200428164353.png" alt=""></p>
+<ul>
+<li>order by(对查询结果按照一个或多个属性列升序(ASE)或降序(DASE)，默认升序)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno
+from Student
+order by Sno;
+
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200428164423.png" alt=""></p>
+<ul>
+<li>按多个列排序</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">selsect Sno,Sname,Sage
+from Student
+order by Sage;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200428164731.png" alt=""></p>
+<hr>
+<h2 id="过滤数据">过滤数据</h2>
+<hr>
+<p>where语句
+<img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429093450.png" alt=""></p>
+<hr>
+<ul>
+<li>检查单个值</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno
+from Studnet
+where Sname <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&#39;张三&#39;</span>;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429094318.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Grade 
+from Sc
+where Grade<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">80</span>;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429095044.png" alt=""></p>
+<ul>
+<li>不匹配查询</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sname
+from Stduent
+where Sname <span style="color:#f92672">&lt;&gt;</span> <span style="color:#960050;background-color:#1e0010">&#39;张三&#39;</span>;<span style="color:#75715e">//可将&lt;&gt;换位！=
+</span></code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429094755.png" alt=""></p>
+<ul>
+<li>范围值检查</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Grade
+from Sc
+where Grade between <span style="color:#ae81ff">5</span> and <span style="color:#ae81ff">80</span>;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429095648.png" alt=""></p>
+<ul>
+<li>空值检查</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    where xxx is null;
+</code></pre></div><hr>
+<h2 id="数据过滤">数据过滤</h2>
+<hr>
+<ul>
+<li>
+<p>and</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno,Grade
+from Sc
+where Cno <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#ae81ff">002</span><span style="color:#960050;background-color:#1e0010">&#39;</span> and Grade <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">10</span>;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429154449.png" alt=""></p>
+</li>
+<li>
+<p>or</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sname
+from Student
+where Sage <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#ae81ff">18</span><span style="color:#960050;background-color:#1e0010">&#39;</span> or Sge <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#ae81ff">19</span><span style="color:#960050;background-color:#1e0010">&#39;</span>;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429154736.png" alt=""></p>
+<p>and运算次序比or高</p>
+</li>
+<li>
+<p>in</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno,Grade
+from Sc
+where Cno in (<span style="color:#ae81ff">001</span>,<span style="color:#ae81ff">002</span>);
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429160615.png" alt=""></p>
+<ul>
+<li>not</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">select Sno,Grade
+from Sc
+where Cno not in (<span style="color:#ae81ff">001</span>,<span style="color:#ae81ff">002</span>);
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/wguyuew/images//img/20200429161013.png" alt=""></p>
+<hr>
+<h2 id="使用子查询">使用子查询</h2>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">select Sno
+from Student
+where Sno <span style="color:#a6e22e">in</span> (
+    select Sno
+    from Sc
+    where Grade <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">90</span>
+);
+</code></pre></div><hr>
+<h2 id="联结表">联结表</h2>
+<hr>
 
     </div>
 
@@ -347,6 +456,8 @@ from Student
         <a href="https://wguyuew.github.io/2020/test/" class="prev" rel="prev" title="hugo&#43;github搭建"><i class="iconfont icon-left"></i>&nbsp;hugo&#43;github搭建</a>
          
         
+        <a href="https://wguyuew.github.io/2020/blog3/" class="next" rel="next" title="数组中第k个元素">数组中第k个元素&nbsp;<i class="iconfont icon-right"></i></a>
+        
     </div>
     <div class="post-comment">
           
@@ -370,7 +481,7 @@ from Student
     });
   </script>
     </div>
-    <h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 1 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+    <h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
 </article>
           </div>
 		   </main>

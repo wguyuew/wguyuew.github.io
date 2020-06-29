@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="叽里咕噜">
+  
+  
+  
+  <link rel="prev" href="https://wguyuew.github.io/2020/blog3/" />
+  
+  <link rel="canonical" href="https://wguyuew.github.io/2020/blog4/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           二叉树中的最大路径和 | Gy&#39;s Blog
+       
+  </title>
+  <meta name="title" content="二叉树中的最大路径和 | Gy&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/wguyuew.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "二叉树中的最大路径和",
+    "headline" : "二叉树中的最大路径和",
+    "description" : "124. 二叉树中的最大路径和 题目描述 给定一个非空二叉树，返回其最大路径和。\n本题中，路径被定义为一条从树中任意节点出发，达到任意节点的序列。该路径至少包含一个节点，且不一定经过根节点。\n示例 1:\n输入: [1,2,3]\r1\r\/ \\\r2 3\r输出: 6\r示例 2:\n输入: [-10,9,20,null,null,15,7]\r-10\r\/ \\\r9 20\r\/ \\\r15 7\r输出: 42\r题目思路 二叉树abc.a为根节点，bc分别左右节点的最优值\na\r\/ \\\rb c\r该二叉树的最优值可能有三种情况：\n①a\x2bb\x2bc\n②a\x2bb\x2ba的父节点\n③a\x2bc\x2ba的父节点\n注：②③情况可以递归\n判断比较大小，避免负数的情况max(0,x);\n所以要做的是递归，递归时记录好全局最大和，返回联络最大和。\n代码 \/**\r* Definition for a binary tree node.\r* public class TreeNode {\r* int val;\r* TreeNode left;\r* TreeNode right;\r* TreeNode(int x) { val = x; }\r* }\r*\/\rclass Solution {\r\/\/全局变量\r int ret = Integer.",
+    "inLanguage" : "zh-cn",
+    "author" : "叽里咕噜",
+    "creator" : "叽里咕噜",
+    "publisher": "叽里咕噜",
+    "accountablePerson" : "叽里咕噜",
+    "copyrightHolder" : "叽里咕噜",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-06-29 21:19:03 \x2b0800 CST",
+    "dateModified" : "2020-06-29 21:19:03 \x2b0800 CST",
+    "url" : "https:\/\/wguyuew.github.io\/2020\/blog4\/",
+    "wordCount" : "130",
+    "keywords" : [ "力扣 递归", "Gy\x27s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://wguyuew.github.io/">Gy&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://wguyuew.github.io/">Gy&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<head>
+    <style type="text/css">
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        height: 40px;
+        background-color: #eee;
+        border-radius: 16px;
+        &:hover {
+            background-color: #ddd;
+ }
+}
+
+    </style>
+</head>
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">二叉树中的最大路径和</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://wguyuew.github.io/" rel="author">叽里咕噜</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-06-29 itemprop="datePublished">June 29, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://wguyuew.github.io/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
+                        
+                </span>
+                <span class="post-word-count">, 130 words</span>
+        </div>
+    </header>
+    <div style="position: fixed; right:5px;max-width:300px; overflow:auto; top: 100px; width: 10vw; bottom:50px">
+        
+<div class="post-toc" id="post-toc">
+<aside>
+    <header>
+    <h3>二叉树中的最大路径和</h3>
+    </header>
+    
+    
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#题目描述">题目描述</a></li>
+    <li><a href="#题目思路">题目思路</a></li>
+    <li><a href="#代码">代码</a></li>
+  </ul>
+</nav>
+    
+    
+</aside>
+<a href="#" id="toc-toggle"></a>
+</div>
+
+    </div>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h4 id="124-二叉树中的最大路径和httpsleetcode-cncomproblemsbinary-tree-maximum-path-sum"><a href="https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/">124. 二叉树中的最大路径和</a></h4>
+<h2 id="题目描述">题目描述</h2>
+<p>给定一个<strong>非空</strong>二叉树，返回其最大路径和。</p>
+<p>本题中，路径被定义为一条从树中任意节点出发，达到任意节点的序列。该路径<strong>至少包含一个</strong>节点，且不一定经过根节点。</p>
+<p><strong>示例 1:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#960050;background-color:#1e0010">输入</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
+
+       <span style="color:#ae81ff">1</span>
+      <span style="color:#f92672">/</span> <span style="color:#960050;background-color:#1e0010">\</span>
+     <span style="color:#ae81ff">2</span>   <span style="color:#ae81ff">3</span>
+
+<span style="color:#960050;background-color:#1e0010">输出</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
+</code></pre></div><p><strong>示例 2:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#960050;background-color:#1e0010">输入</span><span style="color:#f92672">:</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">20</span>,null,null,<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">7</span>]
+
+   <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>
+   <span style="color:#f92672">/</span> <span style="color:#960050;background-color:#1e0010">\</span>
+  <span style="color:#ae81ff">9</span>  <span style="color:#ae81ff">20</span>
+    <span style="color:#f92672">/</span>  <span style="color:#960050;background-color:#1e0010">\</span>
+   <span style="color:#ae81ff">15</span>   <span style="color:#ae81ff">7</span>
+
+<span style="color:#960050;background-color:#1e0010">输出</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span>
+</code></pre></div><h2 id="题目思路">题目思路</h2>
+<p>二叉树abc.a为根节点，bc分别左右节点的最优值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">       a
+      <span style="color:#f92672">/</span> <span style="color:#960050;background-color:#1e0010">\</span>
+     b   c
+</code></pre></div><p>该二叉树的最优值可能有三种情况：</p>
+<p>①a+b+c</p>
+<p>②a+b+a的父节点</p>
+<p>③a+c+a的父节点</p>
+<p>注：②③情况可以递归</p>
+<p>判断比较大小，避免负数的情况max(0,x);</p>
+<p>所以要做的是递归，递归时记录好全局最大和，返回联络最大和。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Definition for a binary tree node.
+</span><span style="color:#75715e"> * public class TreeNode {
+</span><span style="color:#75715e"> *     int val;
+</span><span style="color:#75715e"> *     TreeNode left;
+</span><span style="color:#75715e"> *     TreeNode right;
+</span><span style="color:#75715e"> *     TreeNode(int x) { val = x; }
+</span><span style="color:#75715e"> * }
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+	
+    <span style="color:#75715e">//全局变量
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> ret <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MIN_VALUE</span><span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxPathSum</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        
+        maxPath<span style="color:#f92672">(</span>root<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">return</span> ret<span style="color:#f92672">;</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxPath</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		
+        <span style="color:#75715e">//树结点为空，结果为0
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span> root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+        
+        <span style="color:#75715e">//分别求出左右子节点带来的最优值
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> left <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span>maxPath<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">));</span>
+        <span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span>maxPath<span style="color:#f92672">(</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">));</span>
+
+        <span style="color:#75715e">//比较路径与历史记录
+</span><span style="color:#75715e"></span>        ret <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>ret<span style="color:#f92672">,</span>root<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">+</span>left<span style="color:#f92672">+</span>right<span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">// 返回经过root的单边最大分支给上游
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>left<span style="color:#f92672">,</span>right<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> root<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>叽里咕噜 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://wguyuew.github.io/2020/blog4/>https://wguyuew.github.io/2020/blog4/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://wguyuew.github.io/tags/%E5%8A%9B%E6%89%A3-%E9%80%92%E5%BD%92/">
+                    #力扣 递归</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://wguyuew.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://wguyuew.github.io/2020/blog3/" class="prev" rel="prev" title="数组中第k个元素"><i class="iconfont icon-left"></i>&nbsp;数组中第k个元素</a>
+         
+        
+    </div>
+    <div class="post-comment">
+          
+                 
+          
+          
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'QY5C5qOMGzNVu9R00WtjshWH-gzGzoHsz',
+        appKey: 'GdhkeXvVIlCyBVrGVYawowBR',
+        notify: 'false', 
+        verify: 'false', 
+        avatar:'mm', 
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+    </div>
+    <h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://wguyuew.github.io/">叽里咕噜</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+        <span id="busuanzi_container_site_pv">
+         本站访问量：<span id="busuanzi_value_site_pv"></span>次
+     </span>
+     &nbsp;
+     <span id="busuanzi_container_site_uv">
+         您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
+     </span>
+      </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

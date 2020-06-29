@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>力扣 堆排序 on Gy&#39;s Blog</title>
+    <link>https://wguyuew.github.io/tags/%E5%8A%9B%E6%89%A3-%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
+    <description>Recent content in 力扣 堆排序 on Gy&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 29 Jun 2020 21:12:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://wguyuew.github.io/tags/%E5%8A%9B%E6%89%A3-%E5%A0%86%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数组中第k个元素</title>
+      <link>https://wguyuew.github.io/2020/blog3/</link>
+      <pubDate>Mon, 29 Jun 2020 21:12:18 +0800</pubDate>
+      
+      <guid>https://wguyuew.github.io/2020/blog3/</guid>
+      <description>数组中的第K个最大元素 题目描述 在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+示例 1:
+输入: [3,2,1,5,6,4] 和 k = 2输出: 5示例2：
+输入: [3,2,3,1,2,4,5,5,6] 和 k = 4输出: 4说明:
+​	你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度
+题目思路 可理解成排序问题，排序过程中排到第k大值停止。所以只需要改动排序算法即可，下面使用堆排序中的最大堆实现
+题目解法 堆排序
+源码
+public static void sort(int []arr){//1.构建大顶堆 for(int i=arr.length/2-1;i&amp;gt;=0;i--){//从第一个非叶子结点从下至上，从右至左调整结构 adjustHeap(arr,i,arr.length);}//2.调整堆结构+交换堆顶元素与末尾元素 for(int j=arr.length-1;j&amp;gt;0;j--){//主要修改这部分 swap(arr,0,j);//将堆顶元素与末尾元素进行交换 adjustHeap(arr,0,j);//重新对堆进行调整 }}/*** 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）*/public static void adjustHeap(int []arr,int i,int length){int temp = arr[i];//先取出当前元素i for(int k=i*2+1;k&amp;lt;length;k=k*2+1){//从i结点的左子结点开始，也就是2i+1处开始 if(k+1&amp;lt;length &amp;amp;&amp;amp; arr[k]&amp;lt;arr[k+1]){//如果左子结点小于右子结点，k指向右子结点 k++;}if(arr[k] &amp;gt;temp){//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换） arr[i] = arr[k];i = k;}else{break;}}arr[i] = temp;//将temp值放到最终的位置 }/*** 交换元素*/public static void swap(int []arr,int a ,int b){int temp=arr[a];arr[a] = arr[b];arr[b] = temp;}代码实现</description>
+    </item>
+    
+  </channel>
+</rss>

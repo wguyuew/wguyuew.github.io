@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Gy&#39;s Blog</title>
-    <link>https://wguyuew.github.io/posts/</link>
-    <description>Recent content in Posts on Gy&#39;s Blog</description>
+    <title>算法 on Gy&#39;s Blog</title>
+    <link>https://wguyuew.github.io/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Gy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 29 Jun 2020 21:19:03 +0800</lastBuildDate>
     
-	<atom:link href="https://wguyuew.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wguyuew.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -47,40 +47,6 @@ a/ \b c该二叉树的最优值可能有三种情况：
 题目解法 堆排序
 源码
 public static void sort(int []arr){//1.构建大顶堆 for(int i=arr.length/2-1;i&amp;gt;=0;i--){//从第一个非叶子结点从下至上，从右至左调整结构 adjustHeap(arr,i,arr.length);}//2.调整堆结构+交换堆顶元素与末尾元素 for(int j=arr.length-1;j&amp;gt;0;j--){//主要修改这部分 swap(arr,0,j);//将堆顶元素与末尾元素进行交换 adjustHeap(arr,0,j);//重新对堆进行调整 }}/*** 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）*/public static void adjustHeap(int []arr,int i,int length){int temp = arr[i];//先取出当前元素i for(int k=i*2+1;k&amp;lt;length;k=k*2+1){//从i结点的左子结点开始，也就是2i+1处开始 if(k+1&amp;lt;length &amp;amp;&amp;amp; arr[k]&amp;lt;arr[k+1]){//如果左子结点小于右子结点，k指向右子结点 k++;}if(arr[k] &amp;gt;temp){//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换） arr[i] = arr[k];i = k;}else{break;}}arr[i] = temp;//将temp值放到最终的位置 }/*** 交换元素*/public static void swap(int []arr,int a ,int b){int temp=arr[a];arr[a] = arr[b];arr[b] = temp;}代码实现</description>
-    </item>
-    
-    <item>
-      <title>数据库笔记</title>
-      <link>https://wguyuew.github.io/2020/sql_1/</link>
-      <pubDate>Fri, 24 Apr 2020 22:19:15 +0800</pubDate>
-      
-      <guid>https://wguyuew.github.io/2020/sql_1/</guid>
-      <description>MySql操作  数据库基础     数据库：保存有组织的数据的容器。
-    表：某种特定类型结构化清单。
-    模式:关于数据库和表的布局及特性的信息。
-    列:表中的一个字段，所有表都是从一个或多个列组成的。
-    行:表中的一个记录
-    主键(primary key):一列(一组列)其值能唯一区分表中的每个行
-  主键必须满足的条件: 任意两行都不具有相同的主键值； 每个行都必须具有一个主键值（主键列不允许NULL值）。  主键最好满足的条件: 不更新主键列中的值； 不重用主键列的值； 不在主键列中使用可能会更改的值;       检索数据   检查单个列(未排序)  select Sno(检查的列)from Student(列所在的表); 检查多个列  select Sno,Sname,Ssexfrom Student; 检查所有的列  select *form Student; 检索不同的行 重复元素  select Snofrom Sc;无重复元素</description>
-    </item>
-    
-    <item>
-      <title>hugo&#43;github搭建</title>
-      <link>https://wguyuew.github.io/2020/test/</link>
-      <pubDate>Fri, 03 Apr 2020 16:12:59 +0800</pubDate>
-      
-      <guid>https://wguyuew.github.io/2020/test/</guid>
-      <description>搭建准备工作  一个Git账号 &amp;ndash;&amp;gt; 利用Github Pages搭建博客 Git &amp;ndash;&amp;gt; 博客操作 Hugo &amp;ndash;&amp;gt; 博客框架  Git账号获取 自行百度或谷歌（狗头保命）
-Git   官网下载安装
-  打开cmd(win+R)输入
- git version
-   git 部署个人账号和邮箱 右键打开Git Bush here
-   git init git config username &amp;ldquo;你的gitbub用户名&amp;rdquo; git config useremail &amp;ldquo;邮箱&amp;rdquo; git config username //进行检查 git config useremail //进行检查
- 若出现版本号则成功
-Hugo 下载安装   官网下载安装
-  将安装包解压到你想保存的路径（记住其中的.exe文件路径）
-  将上述路径加入到环境变量中去
-  此电脑 选中属性</description>
     </item>
     
   </channel>

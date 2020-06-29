@@ -23,7 +23,7 @@
     列:表中的一个字段，所有表都是从一个或多个列组成的。
     行:表中的一个记录
     主键(primary key):一列(一组列)其值能唯一区分表中的每个行
-  主键必须满足的条件: 任意两行都不具有相同的主键值； 每个行都必须具有一个主键值（主键列不允许NULL值）。  主键最好满足的条件: 不更新主键列中的值； 不重用主键列的值； 不在主键列中使用可能会更改的值;       检索数据   检查单个列(未排序)  slect Sno(检查的列)from Student(列所在的表); 检查多个列  select Sno,Sname,Ssexfrom Student; 检查所有的列  select *form Student; 检索不同的行 重复元素  select Snofrom Sc;无重复元素</description>
+  主键必须满足的条件: 任意两行都不具有相同的主键值； 每个行都必须具有一个主键值（主键列不允许NULL值）。  主键最好满足的条件: 不更新主键列中的值； 不重用主键列的值； 不在主键列中使用可能会更改的值;       检索数据   检查单个列(未排序)  select Sno(检查的列)from Student(列所在的表); 检查多个列  select Sno,Sname,Ssexfrom Student; 检查所有的列  select *form Student; 检索不同的行 重复元素  select Snofrom Sc;无重复元素</description>
     </item>
     
   </channel>

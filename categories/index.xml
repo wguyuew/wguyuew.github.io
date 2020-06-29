@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Gy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 24 Apr 2020 22:19:15 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2020 21:19:03 +0800</lastBuildDate>
     
 	<atom:link href="https://wguyuew.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>算法</title>
+      <link>https://wguyuew.github.io/categories/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 29 Jun 2020 21:19:03 +0800</pubDate>
+      
+      <guid>https://wguyuew.github.io/categories/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>数据库</title>
